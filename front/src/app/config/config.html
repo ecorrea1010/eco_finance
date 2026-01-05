@@ -1,0 +1,20 @@
+<nav>
+	<ul class="nav nav-tabs" role="tablist">
+		<li class="nav-item">
+			<a class="nav-link active" id="tipos-tab" data-bs-toggle="tab" href="#tipos" role="tab" aria-controls="tipos" aria-selected="true">Tipos</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" id="categorias-tab" data-bs-toggle="tab" href="#categorias" role="tab" aria-controls="categorias" aria-selected="false">Categorías</a>
+		</li>
+	</ul>
+	<div class="tab-content p-3">
+		<div class="tab-pane fade show active" id="tipos" role="tabpanel" aria-labelledby="tipos-tab">
+			<!-- Montar componente Types -->
+			<app-types></app-types>
+		</div>
+		<div class="tab-pane fade" id="categorias" role="tabpanel" aria-labelledby="categorias-tab">
+			<!-- Contenido de Categorías -->
+			<p>Contenido de Categorías.</p>
+		</div>
+	</div>
+</nav>

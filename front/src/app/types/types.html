@@ -1,0 +1,54 @@
+<div class="component-types">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createTypeModal">
+                <lucide-icon [img]="plusIcon"></lucide-icon>
+                <span>Crear Tipo</span>
+        </button>
+
+        <!-- Modal Crear Tipo -->
+        <div class="modal fade" id="createTypeModal" tabindex="-1" aria-labelledby="createTypeModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="createTypeModalLabel">Crear Tipo</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="createTypeForm">
+                            <div class="mb-3">
+                                <label for="typeName" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="typeName" name="name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="typeDescription" class="form-label">Descripción</label>
+                                <textarea class="form-control" id="typeDescription" name="description" rows="3"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="table-types">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Tipo 1</td>
+                    <td>Descripción del Tipo 1</td>
+                </tr>
+                <tr>
+                    <td>Tipo 2</td>
+                    <td>Descripción del Tipo 2</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

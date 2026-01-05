@@ -1,0 +1,109 @@
+#wrapper {
+    overflow-x: hidden;
+    height: 100vh; /* Ocupa todo el alto de la ventana */
+}
+
+#sidebar-wrapper {
+    width: 250px;
+    transition: width .3s ease-in-out; /* ease-in-out es más natural */
+    overflow: hidden; /* Evita que el contenido se desborde durante la animación */
+    flex-shrink: 0;   /* Evita que el sidebar se deforme en pantallas pequeñas */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estado colapsado */
+#sidebar-wrapper.collapsed {
+    width: 80px;
+    /* Eliminamos min-width y max-width fijos aquí para permitir la transición */
+}
+
+.menu-icon {
+    display: inline-block;
+    width: 32px;
+    text-align: center;
+    margin-right: 12px;
+    font-size: 18px;
+}
+
+/* Mejora para el label del menú */
+.menu-label {
+    display: inline-block;
+    vertical-align: middle;
+    white-space: nowrap;
+    transition: opacity 0.3s ease, margin 0.3s ease;
+    opacity: 1;
+    margin-left: 0;
+}
+
+#sidebar-wrapper.collapsed .menu-label {
+    opacity: 0;
+    pointer-events: none; /* Evita que el mouse detecte el texto oculto */
+    display: none; /* Removemos el label del flujo para que no ocupe espacio */
+    margin: 0;
+    padding: 0;
+    width: 0;
+}
+
+/* Estilo para los enlaces del menú */
+.list-group-item {
+    display: flex;
+    align-items: center;
+    height: auto;
+    padding: 12px 15px;
+    white-space: nowrap;
+    column-gap: 12px; /* espacio entre icono y texto */
+}
+
+#sidebar-wrapper.collapsed .list-group-item {
+    padding: 12px;
+    justify-content: center;
+}
+
+#sidebar-wrapper.collapsed .menu-icon {
+    margin-right: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Asegura que el icono de lucide se comporte como bloque y se centre */
+#sidebar-wrapper.collapsed lucide-icon {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Separación y alineación para icons lucide cuando el sidebar está abierto */
+#sidebar-wrapper lucide-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 12px;
+}
+
+/* Asegura que el contenido ocupe el espacio restante sin empujar */
+#page-content-wrapper {
+    flex-grow: 1;
+    min-width: 0; 
+}
+
+/* El círculo del avatar y el de la derecha del navbar */
+.avatar-placeholder, .user-circle {
+    width: 60px;
+    height: 60px;
+    background-color: #6c757d;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.user-circle {
+    width: 40px;
+    height: 40px;
+}
+
+/* Ajuste para que el contenido no se pierda */
+@media (min-width: 768px) {
+    #page-content-wrapper {
+        min-width: 0;
+        width: 100%;
+    }
+}

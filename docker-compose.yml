@@ -1,0 +1,12 @@
+services:
+  front:
+    build:
+      context: ./front
+    container_name: eco_finance_front
+    ports:
+      - "4200:4200"
+    volumes:
+      - ./front:/app
+      - /app/node_modules
+    stdin_open: true
+    tty: true
